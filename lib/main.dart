@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -72,27 +71,16 @@ class _MyAppState extends State<MyApp> {
             child: new Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                new Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    new FloatingActionButton(
-                      onPressed: loadDoc,
-                      child: new Icon(
-                        Icons.file_upload,
-                        color: Colors.black,
-                      ),
-                      backgroundColor: Colors.white,
-                    ),
-                    new FloatingActionButton(
-                      onPressed: loadDoc2,
-                      child: new Icon(
-                        Icons.file_download,
-                        color: Colors.black,
-                      ),
-                      backgroundColor: Colors.white,
-                    ),
-                  ],
-                ),
+                Container(
+                    width: 300,
+                    height: 500,
+                    child: ReorderableListView(
+                      onReorder: (int oldIndex, int newIndex) {},
+                      children: [
+                        ListTile(key: ObjectKey(123), title: Text("abc")),
+                        ListTile(key: ObjectKey(456), title: Text("def"))
+                      ],
+                    )),
                 Container(
                   width: 300,
                   height: 500,
