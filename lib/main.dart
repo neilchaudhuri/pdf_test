@@ -115,7 +115,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void loadDoc2() {
-    _document = "http://pdftron.s3.amazonaws.com/downloads/pl/form.pdf";
+    _document = "https://pdftron.s3.amazonaws.com/downloads/pl/form.pdf";
     _controller.openDocument(_document);
   }
 
